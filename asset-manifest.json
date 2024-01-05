@@ -1,16 +1,30 @@
 {
   "files": {
-    "main.css": "/Project/static/css/main.e2bfe940.css",
-    "main.js": "/Project/static/js/main.5f2bb1ba.js",
+    "main.css": "/Project/static/css/main.c83b67fb.css",
+    "main.js": "/Project/static/js/main.8a7d0200.js",
+    "static/media/main-image7.png": "/Project/static/media/main-image7.89d28060f7e9091aaf1a.png",
+    "static/media/thumbnail7.png": "/Project/static/media/thumbnail7.89d28060f7e9091aaf1a.png",
+    "static/media/main-image6.png": "/Project/static/media/main-image6.10b30f4ab730afaa5be4.png",
+    "static/media/thumbnail6.png": "/Project/static/media/thumbnail6.10b30f4ab730afaa5be4.png",
+    "static/media/main-image5.png": "/Project/static/media/main-image5.76101ad9e436d5ea5873.png",
+    "static/media/thumbnail5.png": "/Project/static/media/thumbnail5.76101ad9e436d5ea5873.png",
+    "static/media/main-image2.png": "/Project/static/media/main-image2.7b3a75f90ab42c453c39.png",
+    "static/media/thumbnail2.png": "/Project/static/media/thumbnail2.7b3a75f90ab42c453c39.png",
+    "static/media/main-image1.png": "/Project/static/media/main-image1.60e1e0b32b961cb7fa30.png",
+    "static/media/thumbnail1.png": "/Project/static/media/thumbnail1.60e1e0b32b961cb7fa30.png",
+    "static/media/main-image3.png": "/Project/static/media/main-image3.981d1a9d6557a14eca03.png",
+    "static/media/thumbnail3.png": "/Project/static/media/thumbnail3.981d1a9d6557a14eca03.png",
+    "static/media/main-image4.png": "/Project/static/media/main-image4.b221136caf8aae5a96b3.png",
+    "static/media/thumbnail4.png": "/Project/static/media/thumbnail4.b221136caf8aae5a96b3.png",
     "static/media/img2.jpg": "/Project/static/media/img2.13fc18cabfd462f54e13.jpg",
     "static/media/img1.jpg": "/Project/static/media/img1.ec17576c9f6a3994d6e0.jpg",
     "static/media/logo.png": "/Project/static/media/logo.cdb26e6e1ce684a6a421.png",
     "index.html": "/Project/index.html",
-    "main.e2bfe940.css.map": "/Project/static/css/main.e2bfe940.css.map",
-    "main.5f2bb1ba.js.map": "/Project/static/js/main.5f2bb1ba.js.map"
+    "main.c83b67fb.css.map": "/Project/static/css/main.c83b67fb.css.map",
+    "main.8a7d0200.js.map": "/Project/static/js/main.8a7d0200.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2bfe940.css",
-    "static/js/main.5f2bb1ba.js"
+    "static/css/main.c83b67fb.css",
+    "static/js/main.8a7d0200.js"
   ]
 }
