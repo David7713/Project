@@ -4,13 +4,15 @@ import './App.css'
 import BookingForm from './BookingForm'
 import DataPicker from './components/DataPicker/DataPicker'
 import YourMainComponent from './YourMainComponent'
+import ImageSlider from './ImageSlider'
 const App = () => {
   return (
     <div>
       <NavigationBar></NavigationBar>
       <DataPicker></DataPicker>
       {/* <BookingForm></BookingForm> */}
-      <YourMainComponent ></YourMainComponent>
+      {/* <YourMainComponent ></YourMainComponent> */}
+      <ImageSlider></ImageSlider>
     </div>
   )
 }

@@ -1,0 +1,90 @@
+/* ImageSlider.css */
+body {
+  overflow-x: hidden; /* Disable horizontal scroll for the entire page */
+}
+
+.thumbnail-images {
+  overflow-x: auto; /* Enable horizontal scroll for the thumbnail section */
+  white-space: nowrap; /* Prevent thumbnails from wrapping to the next line */
+  padding-bottom: 10px; /* Add some space at the bottom to avoid cutting off the last thumbnail */
+}
+
+
+.main-image img {
+  width: 800px;
+  height: 430px;
+  display: block;
+  margin: 0 auto;
+}
+
+.slider-container {
+  position: relative;
+  margin-top: 30px;
+}
+
+.thumbnail-images {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Adjust the gap between thumbnails as needed */
+  margin-top: 10px; /* Add space between main image and thumbnails */
+}
+
+.thumbnail {
+  width: 80px; /* Adjust thumbnail width as needed */
+  height: 80px; /* Adjust thumbnail height as needed */
+  cursor: pointer;
+  border: 2px solid #fff; /* Optional: Add a border to thumbnails */
+  border-radius: 4px; /* Optional: Add border radius to thumbnails */
+  transition: border-color 0.3s ease;
+}
+
+.thumbnail.active {
+  border-color: #007bff; /* Optional: Highlight active thumbnail with a different border color */
+}
+
+.arrows {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrow {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Optional: Add styling for mobile and tablet */
+@media only screen and (max-width: 768px) {
+  .thumbnail {
+    width: 60px;
+    height: 60px;
+  }
+
+  .arrows {
+    position: static;
+    margin-top: 10px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .thumbnail {
+    width: 60px;
+    height: 60px;
+  }
+  
+.main-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+ 
+  .arrows {
+    position: static;
+    margin-top: 10px;
+    color:black;
+  }
+}

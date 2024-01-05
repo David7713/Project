@@ -64,7 +64,7 @@ const DataPicker = () => {
   return (
     <div className='datapicker-part'>
       <div className='datapicker-section'>
-        <div className='hotel-name'> <CiLocationOn className='icon'></CiLocationOn>Armenia Mariott Hotel Yerevan </div>
+        <div className='hotel-name'> <CiLocationOn className='icon'></CiLocationOn>New Yerevan Hotel and Hostel </div>
         <div className='calendar-part'>
           <DatePicker
             selected={startDate}
