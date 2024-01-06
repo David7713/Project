@@ -5,6 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { IoIosLogIn } from 'react-icons/io';
 import { CiLocationOn } from "react-icons/ci";
 import { GoPeople } from "react-icons/go";
+import Main from '../Main/Main';
 
 const CustomDatePickerInput = forwardRef(({ value, onClick }, ref) => (
   <div className="custom-input-container">
@@ -49,6 +50,13 @@ const DataPicker = () => {
     }
   };
 
+
+  const defaultPrice = () => {
+    // Assuming the base rate is $20 per room per day
+    const baseRate = 60;
+    const numberOfDays = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1; // Include the first day in the calculation
+    return baseRate * numberOfDays 
+  };
   const calculatePrice = () => {
     // Assuming the base rate is $20 per room per day
     const baseRate = 20;
@@ -62,7 +70,9 @@ const DataPicker = () => {
   }, [startDate]);
 
   return (
+
     <div className='datapicker-part'>
+      
       <div className='datapicker-section'>
         <div className='hotel-name'> <CiLocationOn className='icon'></CiLocationOn>New Yerevan Hotel and Hostel </div>
         <div className='calendar-part'>
@@ -116,9 +126,11 @@ const DataPicker = () => {
             </div>
           )}
         </div>
+
       </div>
 
-   
+   <Main calculatePrice={calculatePrice}
+   defaultPrice={defaultPrice}></Main>
     </div>
   );
 };

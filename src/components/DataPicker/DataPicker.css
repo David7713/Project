@@ -1,5 +1,5 @@
 .datapicker-part {
-    margin-top: 100px;
+    margin-top: 80px;
     color: rgb(42, 42, 46);
   }
   
@@ -141,10 +141,11 @@
   
     .date-picker-input {
       max-width: 100px;
-      height: 10px;
+      height: 20px;
       font-size: 10px;
-      background-color: white;
-      color: rgb(83, 146, 249);
+      text-align: start;
+      color:black;
+      border: 1px solid   rgb(83, 146, 249);
     }
   
     .adult-children-room-section,
