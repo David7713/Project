@@ -12,6 +12,7 @@ const Content = () => {
             <div className='hotel-highlights-facilities-section'>
                 <div className='hotel-info-section'>
                     <span>Armenian Marriot Hotel Yerevan  <label className='star-icons'>
+                        
                         <FaStar></FaStar>
                         <FaStar></FaStar>
                         <FaStar></FaStar>
@@ -72,6 +73,7 @@ const Content = () => {
                     <span>Facilities</span>
                     <ul>
                         <li><FaCheck className='check-icon'></FaCheck> &nbsp;Front desk [24-hour]</li>
+                        <li> <FaCheck className='check-icon'></FaCheck> &nbsp;Free Cancelation available</li>
                         <li> <FaCheck className='check-icon'></FaCheck> &nbsp;Bicycle rental</li>
                         <li> <FaCheck className='check-icon'></FaCheck> &nbsp;Shuttle service</li>
                         <li> <FaCheck className='check-icon'></FaCheck> &nbsp;Free Wi-Fi in all rooms!</li>
