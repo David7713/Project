@@ -1,11 +1,10 @@
-// Main.js
 import React from 'react';
 import './Main.css';
 import { FaStar } from "react-icons/fa";
 
 
 
-const Main = ({calculatePrice,defaultPrice}) => {
+const Main = ({ calculatePrice, defaultPrice }) => {
 
 
   return (
@@ -13,7 +12,7 @@ const Main = ({calculatePrice,defaultPrice}) => {
       <div className='main-section'>
         <div className='main-section-left-part'>
           <p>New Yerevan Hotel and Hostel </p>
-          <span>1 Amiryan Street , Kentron, Yerevan, Armenia</span>
+          <span>Parseghov St, Ajapnyak, Yerevan, Armenia, 560052</span>
           <br></br>
           <label>
             <FaStar></FaStar>
@@ -23,10 +22,10 @@ const Main = ({calculatePrice,defaultPrice}) => {
           </label>
         </div>
         <div className='main-section-right-part'>
-        <div className='discount-button'>67% OFF TODAY</div>
+          <div className='discount-button'>67% OFF TODAY</div>
           <p className='old-price'> ${defaultPrice()}</p>
-        <p className='new-price'>${calculatePrice()}</p>
-        <button className='book-button'>Book Now</button>
+          <p className='new-price'>${calculatePrice()}</p>
+          <button className='book-button'>Book Now</button>
         </div>
       </div>
     </div>

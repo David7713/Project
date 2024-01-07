@@ -1,16 +1,18 @@
 import React, { useState, useEffect, forwardRef } from 'react';
-import './DataPicker.css'; // Import the CSS file
+
+import './DataPicker.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+
+import Main from '../Main/Main';
+
 import { IoIosLogIn } from 'react-icons/io';
 import { CiLocationOn } from "react-icons/ci";
 import { GoPeople } from "react-icons/go";
-import Main from '../Main/Main';
 
 const CustomDatePickerInput = forwardRef(({ value, onClick }, ref) => (
   <div className="custom-input-container">
     <input className="date-picker-input" onClick={onClick} value={value} ref={ref} readOnly />
-
   </div>
 ));
 
@@ -55,13 +57,13 @@ const DataPicker = () => {
     // Assuming the base rate is $20 per room per day
     const baseRate = 60;
     const numberOfDays = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1; // Include the first day in the calculation
-    return baseRate * numberOfDays 
+    return baseRate * numberOfDays
   };
   const calculatePrice = () => {
     // Assuming the base rate is $20 per room per day
     const baseRate = 20;
     const numberOfDays = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1; // Include the first day in the calculation
-    return baseRate * numberOfDays 
+    return baseRate * numberOfDays
   };
 
   useEffect(() => {
@@ -72,7 +74,7 @@ const DataPicker = () => {
   return (
 
     <div className='datapicker-part'>
-      
+
       <div className='datapicker-section'>
         <div className='hotel-name'> <CiLocationOn className='icon'></CiLocationOn>New Yerevan Hotel and Hostel </div>
         <div className='calendar-part'>
@@ -95,13 +97,13 @@ const DataPicker = () => {
             minDate={startDate}
             dateFormat='MMMM d, yyyy'
             customInput={<input className='date-picker-input' />}
-            // customInput={<CustomDatePickerInput />}
+          // customInput={<CustomDatePickerInput />}
           />
         </div>
 
         <div className='adult-children-room-section'>
           <button className='adult-children-room-button' onClick={handleToggleCounter}>
-          <GoPeople className='icon'></GoPeople> {`${adults} Adults, ${children} Children, ${rooms} Rooms`}
+            <GoPeople className='icon'></GoPeople> {`${adults} Adults, ${children} Children, ${rooms} Rooms`}
           </button>
           {showCounter && (
             <div className='counter'>
@@ -129,8 +131,8 @@ const DataPicker = () => {
 
       </div>
 
-   <Main calculatePrice={calculatePrice}
-   defaultPrice={defaultPrice}></Main>
+      <Main calculatePrice={calculatePrice}
+        defaultPrice={defaultPrice}></Main>
     </div>
   );
 };

@@ -1,157 +1,156 @@
 .datapicker-part {
-    margin-top: 80px;
-    color: rgb(42, 42, 46);
-  }
-  
+  margin-top: 80px;
+  color: rgb(42, 42, 46);
+}
+
+.datapicker-section {
+  width: 100%;
+  min-height: 70px;
+  background-color: #20274d;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.hotel-name {
+  width: 400px;
+  height: 50px;
+  background-color: white;
+  border-radius: 5px;
+  text-align: start;
+  color: rgb(42, 42, 46);
+  padding: 1rem;
+}
+
+.calendar-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 180px;
+  height: 50px;
+}
+
+.date-picker-input {
+  background: white;
+  border: none;
+  padding: 5px;
+  margin-left: 1rem;
+  border-radius: 5px;
+  max-width: 170px;
+  height: 50px;
+  font-size: 16px;
+}
+
+.adult-children-room-section,
+.adult-children-room-button {
+  width: 100%;
+  max-width: 200px;
+  height: 50px;
+  border-radius: 5px;
+  z-index: 40;
+  background-color: white;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.counter {
+  width: 100%;
+  max-width: none;
+  font-size: 5.5px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+
+  font-size: 15px;
+  border-radius: 3px;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.counter button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border-color: rgb(83, 146, 249);
+  background-color: white;
+  color: rgb(83, 146, 249);
+  font-weight: bolder;
+  margin-left: 10px;
+  margin-top: 10px;
+
+}
+
+.icon {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.counter span {
+  margin-left: 10px;
+}
+
+/* Media Queries =========> */
+@media only screen and (max-width: 768px) {
   .datapicker-section {
-    width: 100%;
-    min-height: 70px;
-    background-color: #20274d;
-    display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
     align-items: center;
-  }
-  
-  .hotel-name {
-    width: 400px;
-    height: 50px;
     background-color: white;
-    border-radius: 5px;
-    text-align: start;
-    color: rgb(42, 42, 46);
-    padding: 1rem;
   }
-  
-  .calendar-part {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    max-width: 180px;
-    height: 50px;
-  }
-  
-  .date-picker-input {
-    background: white;
+
+  .calendar-part,
+  .adult-children-room-section {
+    width: 100px;
+    margin-left: 50px;
+    background-color: white;
     border: none;
-    padding: 5px;
-    margin-left: 1rem;
-    border-radius: 5px;
-    max-width: 170px;
-    height: 50px;
-    font-size: 16px;
   }
-  
-  .adult-children-room-section,
-  .adult-children-room-button {
-    width: 100%;
-    max-width: 200px;
-    height: 50px;
-    border-radius: 5px;
-    z-index: 40;
-    background-color: white;
-    font-family: 'Helvetica Neue', sans-serif;
+
+  .icon {
+    font-size: 10px;
   }
-  
+
   .counter {
     width: 100%;
-    max-width: none;
-    font-size: 5.5px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-
-    font-size: 15px;
-    border-radius: 3px;
-    margin-top: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100px;
+    font-size: 7px;
   }
-  
+
   .counter button {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border-color: rgb(83, 146, 249);
-    background-color: white;
-    color: rgb(83, 146, 249);
-    font-weight: bolder;
-    margin-left: 10px;
-    margin-top: 10px;
+    width: 12px;
+    height: 12px;
+    font-size: 8px;
+  }
 
+  .adult-children-room-button {
+    font-size: 10px;
+    border: none;
+    border-color: white;
+    color: rgb(83, 146, 249);
+    background-color: white;
   }
-  
-  .icon {
-    font-size: 18px;
-    margin-right: 10px;
+
+  .hotel-name {
+    display: none;
   }
-  
-  .counter span {
-    margin-left: 10px;
+
+  /* Adjusted styles for mobile and tablet */
+  .calendar-part {
+    max-width: 100px;
+    height: 40px;
   }
-  
-  /* Media queries for responsiveness */
-  @media only screen and (max-width: 768px) {
-    .datapicker-section {
-      flex-direction: row;
-      align-items: center;
-      background-color: white;
-    }
-  
-    .calendar-part,
-    .adult-children-room-section {
-      width: 100px;
-      margin-left: 50px;
-      background-color: white;
-      border: none;
-    }
-  
-    .icon {
-      font-size: 10px;
-    }
-  
-    .counter {
-      width: 100%;
-      height: 100px;
-      font-size: 7px;
-    }
-  
-    .counter button {
-      width: 12px;
-      height: 12px;
-      font-size: 8px;
-    }
-  
-    .adult-children-room-button {
-      font-size: 10px;
-      border: none;
-      border-color: white;
-      color: rgb(83, 146, 249);
-      background-color: white;
-    }
-  
-    .hotel-name {
-      display: none;
-    }
-  
-    /* Adjusted styles for mobile and tablet */
-    .calendar-part {
-      max-width: 100px;
-      height: 40px;
-    }
-  
-    .date-picker-input {
-      max-width: 100px;
-      height: 20px;
-      font-size: 10px;
-      text-align: start;
-      color:black;
-      border: 1px solid   rgb(83, 146, 249);
-    }
-  
-    .adult-children-room-section,
-    .adult-children-room-button {
-      max-width: 100px;
-      height: 40px;
-    }
+
+  .date-picker-input {
+    max-width: 100px;
+    height: 20px;
+    font-size: 10px;
+    text-align: start;
+    color: black;
+    border: 1px solid rgb(83, 146, 249);
   }
-  
+
+  .adult-children-room-section,
+  .adult-children-room-button {
+    max-width: 100px;
+    height: 40px;
+  }
+}

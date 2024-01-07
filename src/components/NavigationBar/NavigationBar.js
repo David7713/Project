@@ -12,21 +12,18 @@ const NavigationBar = () => {
 
       <div className='nav-bar-container'>
         <a href='#Home'><div className='logo-part'>
-            <img  className='logo' src={logo}></img>
-            </div></a>
+          <img className='logo' src={logo}></img>
+        </div></a>
         <ul className={isMobile ? "pages-mobile" : 'pages'}
 
           onClick={() => setIsMobile(false)}  >
-          <a href="#Home"> <li>Hotels & Homes</li></a>
-          <a href='#Home'> <li>Flights</li></a>
-          <a href='#Home'> <li>Airport transfer</li></a>
-          <a href='#Home'>  <li>Coupons & Deals</li></a>
-          <a href='#Home'>  <li>Apartments</li></a>
+          <a href="#Home"> <li className='navbar-item'>Hotels & Homes</li></a>
+          <a href='#Home'> <li className='navbar-item'>Flights</li></a>
+          <a href='#Home'> <li className='navbar-item'>Airport transfer</li></a>
+          <a href='#Home'>  <li className='navbar-item'>Coupons & Deals</li></a>
+          <a href='#Home'>  <li className='navbar-item'>Apartments</li></a>
 
         </ul>
-
-
-
         <button className='mobile-menu-icon'
           onClick={() => setIsMobile(!isMobile)}>
           {isMobile ? <FaTimes></FaTimes> : <CiMenuBurger></CiMenuBurger>}

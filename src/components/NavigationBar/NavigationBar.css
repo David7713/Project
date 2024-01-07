@@ -15,17 +15,19 @@
     padding-top: 10px;
 
 }
-.logo{
+
+.logo {
     width: 100px;
     height: 50px;
-  
+
 }
 
-a{
+a {
     text-decoration: none;
     color: rgb(42, 42, 46);
     line-height: 17px;
 }
+
 .logo-part {
     margin-right: 3rem;
     cursor: pointer;
@@ -44,8 +46,7 @@ ul li {
     cursor: pointer;
 }
 
-.logo-part:hover,
-ul li:hover {
+.navbar-item:hover {
     color: rgb(83, 146, 249);
 
 }
@@ -59,9 +60,6 @@ ul li:hover {
 /* Media Queries =========> */
 
 @media screen and (max-width: 600px) {
-
-
-
 
     .logo-part {
         margin-right: 10rem;
@@ -81,7 +79,7 @@ ul li:hover {
         transition: 1s ease 2s;
         z-index: 5;
         background-color: white;
-     
+
 
     }
 
@@ -97,7 +95,7 @@ ul li:hover {
 
     ul {
         text-align: center;
-        padding:0.5rem;
+        padding: 0.5rem;
     }
 
     ul li {

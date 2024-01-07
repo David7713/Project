@@ -1,12 +1,11 @@
-/* ImageSlider.css */
 body {
-  overflow-x: hidden; /* Disable horizontal scroll for the entire page */
+  overflow-x: hidden;
 }
 
 .thumbnail-images {
-  overflow-x: auto; /* Enable horizontal scroll for the thumbnail section */
-  white-space: nowrap; /* Prevent thumbnails from wrapping to the next line */
-  padding-bottom: 10px; /* Add some space at the bottom to avoid cutting off the last thumbnail */
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 10px;
 }
 
 
@@ -25,21 +24,21 @@ body {
 .thumbnail-images {
   display: flex;
   justify-content: center;
-  gap: 10px; /* Adjust the gap between thumbnails as needed */
-  margin-top: 10px; /* Add space between main image and thumbnails */
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .thumbnail {
-  width: 80px; /* Adjust thumbnail width as needed */
-  height: 80px; /* Adjust thumbnail height as needed */
+  width: 80px;
+  height: 80px;
   cursor: pointer;
-  border: 2px solid #fff; /* Optional: Add a border to thumbnails */
-  border-radius: 4px; /* Optional: Add border radius to thumbnails */
+  border: 2px solid #fff;
+  border-radius: 4px;
   transition: border-color 0.3s ease;
 }
 
 .thumbnail.active {
-  border-color: #007bff; /* Optional: Highlight active thumbnail with a different border color */
+  border-color: #007bff;
 }
 
 .arrows {
@@ -56,7 +55,7 @@ body {
   cursor: pointer;
 }
 
-/* Optional: Add styling for mobile and tablet */
+/* Media Queries =========> */
 @media only screen and (max-width: 768px) {
   .thumbnail {
     width: 60px;
@@ -68,23 +67,24 @@ body {
     margin-top: 10px;
   }
 }
+
 @media only screen and (max-width: 768px) {
   .thumbnail {
     width: 60px;
     height: 60px;
   }
-  
-.main-image img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
 
- 
+  .main-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+
   .arrows {
     position: static;
     margin-top: 10px;
-    color:black;
+    color: black;
   }
 }

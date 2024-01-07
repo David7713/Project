@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './ImageSlider.css'; // Import your CSS file
+import './ImageSlider.css';
+
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 
@@ -19,8 +20,8 @@ import thumbnail5 from './images/thumbnail5.png';
 import thumbnail6 from './images/thumbnail6.png';
 import thumbnail7 from './images/thumbnail7.png';
 
-const mainImages = [mainImage1, mainImage2, mainImage3,mainImage4,mainImage5,mainImage6,mainImage7];
-const thumbnailImages = [thumbnail1, thumbnail2,thumbnail3, thumbnail4,thumbnail5, thumbnail6, thumbnail7]
+const mainImages = [mainImage1, mainImage2, mainImage3, mainImage4, mainImage5, mainImage6, mainImage7];
+const thumbnailImages = [thumbnail1, thumbnail2, thumbnail3, thumbnail4, thumbnail5, thumbnail6, thumbnail7]
 const ImageSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -50,7 +51,7 @@ const ImageSlider = () => {
             alt={`Thumbnail ${index + 1}`}
             className={index === currentIndex ? 'thumbnail active' : 'thumbnail'}
             onClick={() => handleThumbnailClick(index)}
-           
+
           />
         ))}
       </div>
