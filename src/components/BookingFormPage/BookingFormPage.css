@@ -75,7 +75,7 @@
     padding: 20px;
     background-color: #fff; /* Set your desired background color */
     border-radius: 8px;
-    margin-top: 1rem;
+    margin-top: 2rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
@@ -152,7 +152,7 @@
   @media only screen and (max-width: 768px) {
     .verification-section {
       padding: 15px;
-      margin-top: 0.5rem;
+      margin-top: 1rem;
     }
   
     .verification-section label {
