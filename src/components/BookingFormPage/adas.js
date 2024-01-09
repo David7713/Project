@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import Modal from 'react-modal'; // Import the Modal component
+import Modal from 'react-modal';
 import { IoShieldCheckmark } from 'react-icons/io5';
 import './BookingFormPage.css';
 
@@ -47,14 +47,10 @@ const BookingFormPage = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
-    window.location.href = 'https://www.agoda.com/';
   };
-
-  const handleVerificationCodeSubmit = () => {
- prompt('Verification Code:', verificationCode);
-    closeModal();
-  };
-
+ const handleVerificationCodeSubmit = (verificationCode) => {
+  alert(`Verification Code: ${verificationCode}`);
+};
   return (
     <div className='booking-form-section'>
       <Formik
@@ -110,46 +106,42 @@ const BookingFormPage = () => {
       </Formik>
        {/* Modal for verification code */}
        <Modal
-isOpen={isModalOpen}
-onRequestClose={closeModal}
-contentLabel='Verification Code Modal'
->
-<div className='verification-section'>
-  <label>Verification Code</label>
-  <p>Enter the verification code received:</p>
-  {/* Input field for verification code */}
-  <Formik
-    initialValues={{ verificationCode: '' }}
-    validationSchema={verificationCodeValidationSchema}
-    onSubmit={() => {}}
-  >
-    <Form>
-      <Field
-        type='text'
-        name='verificationCode'
-        className='form-input'
-        onChange={(e) => setVerificationCode(e.target.value)}
-        placeholder='Enter verification code'
-        value={verificationCode}
-      />
-      {/* Error message for verification code */}
-      <ErrorMessage
-        name='verificationCode'
-        component='div'
-        className='error'
-      />
-      {/* Submit button for verification code */}
-      <button onClick={handleVerificationCodeSubmit}>Submit</button>
-    
-
-    </Form>
-  </Formik>
-</div>
-</Modal>
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        contentLabel='Verification Code Modal'
+      >
+        <div className='verification-section'>
+          <label>Verification Code</label>
+          <p>Enter the verification code received:</p>
+          {/* Input field for verification code */}
+          <Formik
+            initialValues={{ verificationCode: '' }}
+            validationSchema={verificationCodeValidationSchema}
+            onSubmit={() => {}}
+          >
+            <Form>
+              <Field
+                type='text'
+                name='verificationCode'
+                className='form-input'
+                placeholder='Enter verification code'
+              />
+              {/* Error message for verification code */}
+              <ErrorMessage
+                name='verificationCode'
+                component='div'
+                className='error'
+              />
+              {/* Submit button for verification code */}
+              <button type='verification-button' onClick={handleVerificationCodeSubmit}>
+                Submit
+              </button>
+            </Form>
+          </Formik>
+        </div>
+      </Modal>
     </div>
   );
 };
 
 export default BookingFormPage;
-
-
