@@ -32,7 +32,7 @@
 }
 
 .date-picker-input {
-  background: white;
+ 
   border: none;
   padding: 5px;
   margin-left: 1rem;
@@ -40,6 +40,12 @@
   max-width: 170px;
   height: 50px;
   font-size: 16px;
+}
+.react-datepicker__current-month, .react-datepicker-time__header, .react-datepicker-year-header {
+  margin-top: 0;
+  font-weight: bold;
+  font-size: 0.944rem;
+  font-family: 'Poppins';
 }
 
 .adult-children-room-section,
@@ -87,6 +93,125 @@
 
 .counter span {
   margin-left: 10px;
+}
+/* Default styles */
+.header-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.discount-button {
+  background-color: red;
+  color: white;
+  width: 135px;
+  height: 20px;
+  border: none;
+  font-size: 15px;
+  margin-top: 10px;
+
+}
+
+
+.header-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border: 1px solid rgb(212, 209, 209);
+  align-items: center;
+  width: 80%;
+
+  max-width: 800px;
+  border-radius: 3px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.header-section-left-part {
+  font-size: 20px;
+  border-radius: 3px;
+
+
+}
+
+.header-section-left-part span {
+  font-size: 15px;
+}
+
+.header-section-left-part p {
+  font-weight: 500;
+  color: black;
+}
+
+.header-section-left-part label {
+  color: gold;
+}
+
+.book-button {
+  background-color: #488bf8;
+  color: white;
+  width: 135px;
+  height: 35px;
+  cursor: pointer;
+  border: none;
+  margin-top: 10px;
+
+}
+
+.book-button:hover {
+  background-color: #84c3e7;
+}
+
+.header-section-right-part {
+  margin-left: 1rem;
+}
+
+.old-price {
+  text-decoration: line-through;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.new-price {
+  font-size: 25px;
+  color: red;
+}
+
+/* Media Queries =========> */
+
+@media screen and (max-width: 600px) {
+  .main-part {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-section {
+    width: 90%;
+  }
+
+  .header-section-left-part {
+    text-align: center;
+
+  }
+
+  .header-section-right-part {
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .header-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-section-left-part {
+    text-align: center;
+
+  }
 }
 
 /* Media Queries =========> */

@@ -1,10 +1,10 @@
 import React, { useState, useEffect, forwardRef } from 'react';
-
 import './DataPicker.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { FaStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
-import Main from '../Main/Main';
 
 import { IoIosLogIn } from 'react-icons/io';
 import { CiLocationOn } from "react-icons/ci";
@@ -16,7 +16,7 @@ const CustomDatePickerInput = forwardRef(({ value, onClick }, ref) => (
   </div>
 ));
 
-const DataPicker = () => {
+const DataPicker = ({onBookNowClick}) => {
   const currentDate = new Date();
 
   const [startDate, setStartDate] = useState(currentDate);
@@ -128,11 +128,31 @@ const DataPicker = () => {
             </div>
           )}
         </div>
-
       </div>
 
-      <Main calculatePrice={calculatePrice}
-        defaultPrice={defaultPrice}></Main>
+      <div className='header-part'>
+      <div className='header-section'>
+      <div className='header-section-left-part'>
+          <p>New Yerevan Hotel and Hostel </p>
+          <span>Parseghov St, Ajapnyak, Yerevan, Armenia, 560052</span>
+          <br></br>
+          <label>
+            <FaStar></FaStar>
+            <FaStar></FaStar>
+            <FaStar></FaStar>
+            <FaStar></FaStar>
+          </label>
+        </div>
+        <div className='header-section-right-part'>
+          <div className='discount-button'>67% OFF TODAY</div>
+          <p className='old-price'> ${defaultPrice()}</p>
+          <p className='new-price'>${calculatePrice()}</p>
+          <Link to="/booking">
+            <button className='book-button' onClick={onBookNowClick}>Book Now</button>
+          </Link>
+        </div>
+      </div>
+    </div>
     </div>
   );
 };

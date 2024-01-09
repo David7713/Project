@@ -25,7 +25,8 @@ const Content = () => {
 
                 <div className='hotel-highlights-facilities-section'>
                     <div className='hotel-info-section'>
-                        <span>New Yerevan Hotel and Hostel  <label className='star-icons'>
+                        <span>New Yerevan Hotel and Hostel
+                     <label className='star-icons'>
                             <FaStar></FaStar>
                             <FaStar></FaStar>
                             <FaStar></FaStar>
@@ -183,6 +184,37 @@ const Content = () => {
                     </div>
                 </div>
             </div>
+
+
+            <div className='review-section'>
+                <div className='first-review'>
+                    <div className='user-info-part'>
+                        <label>9.5 Excellent</label>
+                        <br></br>
+                        <ul>
+                            <li>
+                                <ReactCountryFlag countryCode="AR" svg className='country-svg' />
+                               Sofia from Argentina</li><br></br>
+                            <li><IoBagHandleOutline></IoBagHandleOutline>  &nbsp;Solo Traveler</li><br></br>
+                            <li><IoBedOutline></IoBedOutline>  &nbsp;Solo Traveler</li><br></br>
+                            <li><CiCalendar></CiCalendar>  &nbsp;Stayed 3 night in August 2023</li><br></br>
+                        </ul>
+                    </div>
+                    <div className='review-text-part'>
+                        <label>I highly recommend
+                        </label>
+                        <p>I recently stayed at  this Hotel and it was a fantastic experience. The staff was friendly and attentive, making me feel welcome from the moment I arrived. The room was clean, comfortable.</p>
+                        <span>Reviewed August 13, 2023</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
             <div className='footer-section'>
                 <div className='footer-text-section'>
                     <p>All material herein © 2005–2023 Agoda Company Pte. Ltd. All Rights Reserved.</p>
@@ -194,6 +226,7 @@ const Content = () => {
                     <img src={OpentableImage}></img>
                     <img src={RentalCarsImage}></img>
                     <img src={BookingImage}></img>
+                
                 </div>
             </div>
         </>
