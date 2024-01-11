@@ -82,10 +82,7 @@
   align-items: center;
   justify-content: space-between;
 }
-.card-section ul{
-  margin-right: 3rem;
-   
-}
+
 .card-section p {
   color:white;
   text-align: center;
@@ -146,17 +143,14 @@
     }
     .card-section{
       width:80% ;
-      font-size: 16px;
+      font-size: 14px;
       
     }
     .card-section p {
       font-size: 10px;
-      margin-left: 2rem;
+     
     }
-    .card-svg{
-      width: 50px;
-      height: 30px;
-    }
+  
     
   }
   
@@ -165,7 +159,7 @@
     .form-input {
       width: 40vh; /* Adjust the width for mobile screens */
     }
- 
+  
   
     .booking-form {
       padding: 10px; /* Adjust padding for smaller screens */
