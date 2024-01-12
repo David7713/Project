@@ -146,3 +146,41 @@ const BookingFormPage = () => {
 };
 
 export default BookingFormPage;
+
+<Field
+className="form-input"
+type='text'
+name='expirationDate'
+placeholder='MM/YY'
+onInput={(e) => {
+  const input = e.target;
+  const value = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+  let formattedValue = '';
+
+  if (value.length <= 2) {
+    // Format for MM
+    formattedValue = value;
+  } else {
+    // Format for MM/YY
+    const month = value.slice(0, 2);
+    const year = value.slice(2, 4);
+
+    // Ensure that month is between 01 and 12
+    const formattedMonth = Math.min(parseInt(month, 10), 12).toString().padStart(2, '0');
+
+    // Ensure that the third digit is not less than 2 and the fourth digit is not less than 4
+    const thirdDigit = parseInt(value[2], 10);
+    const fourthDigit = parseInt(value[3], 10);
+
+    if (thirdDigit >= 2 && fourthDigit >= 4) {
+      formattedValue = `${formattedMonth}/${year}`;
+    } else {
+      // If the condition is not met, keep the original value
+      formattedValue = value;
+    }
+  }
+
+  input.value = formattedValue;
+  e.preventDefault();
+}}
+/>

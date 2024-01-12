@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import './NavigationBar.css'
-import logo from '/static/media/logo.png'
+import logo from '../../Assets/logo.png'
 import { CiMenuBurger } from "react-icons/ci";
 import { FaTimes } from 'react-icons/fa'
 

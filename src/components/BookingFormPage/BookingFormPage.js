@@ -151,24 +151,38 @@ const BookingFormPage = () => {
             <ErrorMessage name='cardNumber' component='div' className='error' />
           </div>
           <div>
-            <p className='input-label'>Expiration Date</p>
-            <Field
-    className="form-input"
-    type='text'
-    name='expirationDate'
-    placeholder='MM/YY'
-    onInput={(e) => {
-      const input = e.target;
-      const value = input.value.replace(/\D/g, ''); // Remove non-numeric characters
-      const formattedValue = value
-        .slice(0, 2)
-        .concat(value.length > 2 ? '/' + value.slice(2, 4) : '');
+         <p className='input-label'>Expiration Date</p>
+         <Field
+  className="form-input"
+  type='text'
+  name='expirationDate'
+  placeholder='MM/YY'
+  onInput={(e) => {
+    const input = e.target;
+    const value = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+    let formattedValue = '';
 
-      input.value = formattedValue;
-      e.preventDefault();
-    }}
-  />
-            <ErrorMessage name='expirationDate' component='div' className='error' />
+    if (value.length <= 2) {
+      // Format for MM
+      formattedValue = value;
+    } else {
+      // Format for MM/YY
+      const month = value.slice(0, 2);
+      const year = value.slice(2, 4);
+
+      // Ensure that month is between 01 and 12
+      const formattedMonth = Math.min(parseInt(month, 10), 12).toString().padStart(2, '0');
+
+      formattedValue = `${formattedMonth}/${year}`;
+    }
+
+    input.value = formattedValue;
+    e.preventDefault();
+  }}
+/>
+
+  <ErrorMessage name='expirationDate' component='div' className='error' />
+
           </div>
           <div>
             <p className='input-label'>CVC/CVV *</p>
