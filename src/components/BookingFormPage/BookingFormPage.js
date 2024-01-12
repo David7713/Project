@@ -6,26 +6,44 @@ import { IoShieldCheckmark } from 'react-icons/io5';
 import './BookingFormPage.css';
 
 
+const validateCardNumber = (value) => {
+  // Implement your card number validation logic here
+  // For simplicity, let's say the card number must be numeric and have a specific length
+  const regex = /^[0-9]{16}$/;
+  return regex.test(value);
+};
+
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required('Name is required'),
   surname: Yup.string().required('Surname is required'),
   email: Yup.string().email('Invalid email').required('Email is required'),
   cardHolderName: Yup.string().required('Card Holder Name is required'),
-  cardNumber: Yup.string().required('Card Number is required'),
+  cardNumber: Yup.string()
+    .required('Card Number is required')
+    .test('cardNumber', 'Invalid Card Number', validateCardNumber),
   expirationDate: Yup.string().required('Expiration Date is required'),
   cvc: Yup.string().required('CVC/CVV is required'),
+  
 });
 
 const verificationCodeValidationSchema = Yup.object().shape({
   verificationCode: Yup.string().required('Verification Code is required'),
 });
 
+
+
+
+
 const BookingFormPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [verificationCode, setVerificationCode] = useState('');
   const [isLoading, setIsLoading] = useState(false); // New state for loading animation
   const [loadingDots, setLoadingDots] = useState('');
+  
+  
+
+
 
   const initialValues = {
     name: '',
@@ -134,7 +152,22 @@ const BookingFormPage = () => {
           </div>
           <div>
             <p className='input-label'>Expiration Date</p>
-            <Field  className="form-input"  type='text' name='expirationDate' />
+            <Field
+    className="form-input"
+    type='text'
+    name='expirationDate'
+    placeholder='MM/YY'
+    onInput={(e) => {
+      const input = e.target;
+      const value = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+      const formattedValue = value
+        .slice(0, 2)
+        .concat(value.length > 2 ? '/' + value.slice(2, 4) : '');
+
+      input.value = formattedValue;
+      e.preventDefault();
+    }}
+  />
             <ErrorMessage name='expirationDate' component='div' className='error' />
           </div>
           <div>
