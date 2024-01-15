@@ -265,12 +265,12 @@
   }
 
   .date-picker-input {
-    max-width: 100px;
+    max-width: 105px;
     height: 20px;
     font-size: 10px;
     text-align: start;
     color: black;
-    border: 1px solid rgb(83, 146, 249);
+    border: 3px solid rgb(83, 146, 249);
   }
 
   .adult-children-room-section,

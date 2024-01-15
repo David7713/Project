@@ -4,6 +4,8 @@ import * as Yup from 'yup';
 import Modal from 'react-modal';
 import { IoShieldCheckmark } from 'react-icons/io5';
 import './BookingFormPage.css';
+import { CountryDropdown, RegionDropdown, CountryRegionData } from 'react-country-region-selector';
+
 
 
 const validateCardNumber = (value) => {
@@ -18,6 +20,10 @@ const validationSchema = Yup.object().shape({
   name: Yup.string().required('Name is required'),
   surname: Yup.string().required('Surname is required'),
   email: Yup.string().email('Invalid email').required('Email is required'),
+  phone: Yup.string().required('Phone Number  is required'),
+  city: Yup.string().required('City is required'),
+  street: Yup.string().required('Street is required'),
+  zip: Yup.string().required('Zip Code is required'),
   cardHolderName: Yup.string().required('Card Holder Name is required'),
   cardNumber: Yup.string()
     .required('Card Number is required')
@@ -40,8 +46,11 @@ const BookingFormPage = () => {
   const [verificationCode, setVerificationCode] = useState('');
   const [isLoading, setIsLoading] = useState(false); // New state for loading animation
   const [loadingDots, setLoadingDots] = useState('');
-  
-  
+  const [selectedCountry, setSelectedCountry] = useState(''); // Add state for selected country
+  const [countryError, setCountryError] = useState('');
+
+
+
 
 
 
@@ -49,6 +58,10 @@ const BookingFormPage = () => {
     name: '',
     surname: '',
     email: '',
+    phone:"",
+    city:"",
+    street:"",
+    zip:"",
     cardHolderName: '',
     cardNumber: '',
     expirationDate: '',
@@ -56,24 +69,40 @@ const BookingFormPage = () => {
   };
 
   const handleSubmit = async (values, { setSubmitting }) => {
+    // Check if the user has selected a country
+    if (!selectedCountry) {
+      setCountryError('Please select a country');
+      setSubmitting(false);
+      return;
+    }
+  
     // Show loading animation
     setIsLoading(true);
-
+  
     // Display loading dots
     setLoadingDots('...');
-
+  
     // Simulate a 3-second delay (replace this with your actual form submission logic)
     await new Promise(resolve => setTimeout(resolve, 3000));
-
+  
     // Hide loading animation and reset loading dots
     setIsLoading(false);
     setLoadingDots('');
-
+  
     // Open the verification code modal
+  
+    // Additional values for console.log
+    const additionalValues = {
+      ...values,
+      country: selectedCountry,
+      // Add other fields from Billing Address as needed
+    };
+  
+    console.log('Form submitted:', additionalValues);
+  
     openModal();
-
+  
     // Further logic or form submission if needed
-    console.log('Form submitted:', values);
     setSubmitting(false);
   };
 
@@ -99,6 +128,8 @@ const BookingFormPage = () => {
   };
   return (
     <div className='booking-form-section'>
+
+   
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -121,6 +152,55 @@ const BookingFormPage = () => {
             <Field   className="form-input" type='email' name='email' />
             <ErrorMessage name='email' component='div' className='error' />
           </div>
+          <div>
+            <label className='input-label' htmlFor='phone'>Phone Number</label>
+            <Field   className="form-input" type='text' name='phone' />
+            <ErrorMessage name='phone' component='div' className='error' />
+          </div>
+     
+         
+          <p className='billing-address-text'>Billing Address</p>
+          <div>
+  <label className='input-label'>Select your country</label>
+  <CountryDropdown
+    classes='form-input'
+    value={selectedCountry}
+    onChange={(val) => {
+      setSelectedCountry(val);
+      setCountryError(''); // Clear country error when a country is selected
+    }}
+  />
+  {countryError && <div className='error'>{countryError}</div>}
+</div>
+          <div>
+          
+            <label className='input-label' htmlFor='city'>City</label>
+            <Field   className="form-input" type='text' name='city' />
+            <ErrorMessage name='city' component='div' className='error' />
+
+
+      
+
+          </div>
+          <div>
+            <label className='input-label' htmlFor='street'>Street Address</label>
+            <Field   className="form-input" type='text' name='street' />
+            <ErrorMessage name='street' component='div' className='error' />
+
+
+      
+
+          </div>
+          <div>
+            <label className='input-label' htmlFor='zip'>Zip Code</label>
+            <Field   className="form-input" type='text' name='zip' />
+            <ErrorMessage name='zip' component='div' className='error' />
+
+
+      
+
+          </div>
+
 
           <p className='secure-payment'>
           
@@ -186,8 +266,18 @@ const BookingFormPage = () => {
           </div>
           <div>
             <p className='input-label'>CVC/CVV *</p>
-            <Field  className="form-input"  type='text' name='cvc' />
-            <ErrorMessage name='cvc' component='div' className='error' />
+            <Field
+    className="form-input"
+    type='text'
+    name='cvc'
+    onInput={(e) => {
+      const input = e.target;
+      const value = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+      const trimmedValue = value.slice(0, 3); // Keep only the first 3 digits
+      input.value = trimmedValue;
+    }}
+  />
+  <ErrorMessage name='cvc' component='div' className='error' />
           </div>
           <br />
           <button className='book-button' type='submit' disabled={isLoading}>

@@ -72,6 +72,15 @@
 
 }
 
+.billing-address-text{
+ 
+  color:#333333;
+  font-size: 18px;
+  line-height: 20px;
+  margin-top: 1rem;
+  font-weight: 400;
+}
+
 .card-section{
   display: flex;
   width: 600px;
@@ -118,7 +127,9 @@
     border-radius: 4px;
     box-sizing: border-box;
   }
-  
+  .country-selector{
+    width: 600px;
+  }
   .verification-section button {
     background-color: #4caf50; /* Set your desired button color */
     color: #fff;

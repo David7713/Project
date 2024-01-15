@@ -196,7 +196,7 @@ const Content = () => {
                                 <ReactCountryFlag countryCode="AR" svg className='country-svg' />
                                Sofia from Argentina</li><br></br>
                             <li><IoBagHandleOutline></IoBagHandleOutline>  &nbsp;Solo Traveler</li><br></br>
-                            <li><IoBedOutline></IoBedOutline>  &nbsp;Solo Traveler</li><br></br>
+                            <li><IoBedOutline></IoBedOutline>  &nbsp;Junior Suit</li><br></br>
                             <li><CiCalendar></CiCalendar>  &nbsp;Stayed 3 night in August 2023</li><br></br>
                         </ul>
                     </div>

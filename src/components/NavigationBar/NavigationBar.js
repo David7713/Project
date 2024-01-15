@@ -4,24 +4,27 @@ import './NavigationBar.css'
 import logo from '../../Assets/logo.png'
 import { CiMenuBurger } from "react-icons/ci";
 import { FaTimes } from 'react-icons/fa'
-
+import { Link } from 'react-router-dom';
 const NavigationBar = () => {
   const [isMobile, setIsMobile] = useState(false)
   return (
     <div>
 
       <div className='nav-bar-container'>
-        <a href='#Home'><div className='logo-part'>
+      <Link to="/">
+      <div className='logo-part'>
           <img className='logo' src={logo}></img>
-        </div></a>
+        </div>
+          </Link>
+       
         <ul className={isMobile ? "pages-mobile" : 'pages'}
 
           onClick={() => setIsMobile(false)}  >
-          <a href="#Home"> <li className='navbar-item'>Hotels & Homes</li></a>
-          <a href='#Home'> <li className='navbar-item'>Flights</li></a>
-          <a href='#Home'> <li className='navbar-item'>Airport transfer</li></a>
-          <a href='#Home'>  <li className='navbar-item'>Coupons & Deals</li></a>
-          <a href='#Home'>  <li className='navbar-item'>Apartments</li></a>
+          <Link to="/"><li className='navbar-item'>Hotels & Homes</li> </Link>
+         <Link to="/"> <li className='navbar-item'>Flights</li> </Link>
+           <Link to="/"><li className='navbar-item'>Airport transfer</li> </Link>
+          <Link to="/">  <li className='navbar-item'>Coupons & Deals</li> </Link>
+          <Link to="/">   <li className='navbar-item'>Apartments</li> </Link>
 
         </ul>
         <button className='mobile-menu-icon'
