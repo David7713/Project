@@ -64,11 +64,15 @@ const BookingFormPage = ({ price }) => {
   };
 
   const handleCardExpiryChange = (e) => {
+  
     setExpiry(e.target.value);
+    setCardValidationErrorMessage('');
   };
 
   const handleCardCVCChange = (e) => {
+
     setCVC(e.target.value);
+    setCardValidationErrorMessage('');
   };
 
   const initialValues = {
@@ -152,12 +156,12 @@ const BookingFormPage = ({ price }) => {
     }
 
     if (!expirationDateValidation.isValid) {
-      setCardValidationErrorMessage('Invalid expiration date');
+      setCardValidationErrorMessage('Card information required');
       return false;
     }
 
     if (!cvcValidation.isValid) {
-      setCardValidationErrorMessage('Invalid CVC');
+      setCardValidationErrorMessage('Card information required');
       return false;
     }
 
