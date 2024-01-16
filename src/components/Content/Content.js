@@ -26,12 +26,12 @@ const Content = () => {
                 <div className='hotel-highlights-facilities-section'>
                     <div className='hotel-info-section'>
                         <span>New Yerevan Hotel and Hostel
-                     <label className='star-icons'>
-                            <FaStar></FaStar>
-                            <FaStar></FaStar>
-                            <FaStar></FaStar>
-                            <FaStar></FaStar>
-                        </label></span>
+                            <label className='star-icons'>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                                <FaStar></FaStar>
+                            </label></span>
                         <label>Parseghov St, Ajapnyak, Yerevan, Armenia, 560052 </label>
                         <p>The car parking and the Wi-Fi are always free, so you can stay in touch and come and go as you please. <br></br>Conveniently situated in the Ajapnyak part of Yerevan, this property puts you close to attractions <br></br>and interesting dining options. Don't leave before paying a visit to the famous Zvartnots International Airport.<br></br> As an added bonus, restaurant is provided on-site to conveniently serve your needs.d</p>
                     </div>
@@ -194,7 +194,7 @@ const Content = () => {
                         <ul>
                             <li>
                                 <ReactCountryFlag countryCode="AR" svg className='country-svg' />
-                               Sofia from Argentina</li><br></br>
+                                Sofia from Argentina</li><br></br>
                             <li><IoBagHandleOutline></IoBagHandleOutline>  &nbsp;Solo Traveler</li><br></br>
                             <li><IoBedOutline></IoBedOutline>  &nbsp;Junior Suit</li><br></br>
                             <li><CiCalendar></CiCalendar>  &nbsp;Stayed 3 night in August 2023</li><br></br>
@@ -203,7 +203,7 @@ const Content = () => {
                     <div className='review-text-part'>
                         <label>I highly recommend
                         </label>
-                        <p>I recently stayed at  this Hotel and it was a fantastic experience. The staff was friendly and attentive, making me feel welcome from the moment I arrived. The room was clean, comfortable.</p>
+                        <p>I recently stayed at  this Hotel and it was a fantastic experience. The staff was friendly and attentive, making me feel welcome<br></br> from the moment I arrived. The room was clean, comfortable.</p>
                         <span>Reviewed August 13, 2023</span>
                     </div>
                 </div>
@@ -226,7 +226,7 @@ const Content = () => {
                     <img src={OpentableImage}></img>
                     <img src={RentalCarsImage}></img>
                     <img src={BookingImage}></img>
-                
+
                 </div>
             </div>
         </>

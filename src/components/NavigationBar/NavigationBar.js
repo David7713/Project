@@ -11,18 +11,18 @@ const NavigationBar = () => {
     <div>
 
       <div className='nav-bar-container'>
-      <Link to="/">
-      <div className='logo-part'>
-          <img className='logo' src={logo}></img>
-        </div>
-          </Link>
-       
+        <Link to="/">
+          <div className='logo-part'>
+            <img className='logo' src={logo}></img>
+          </div>
+        </Link>
+
         <ul className={isMobile ? "pages-mobile" : 'pages'}
 
           onClick={() => setIsMobile(false)}  >
           <Link to="/"><li className='navbar-item'>Hotels & Homes</li> </Link>
-         <Link to="/"> <li className='navbar-item'>Flights</li> </Link>
-           <Link to="/"><li className='navbar-item'>Airport transfer</li> </Link>
+          <Link to="/"> <li className='navbar-item'>Flights</li> </Link>
+          <Link to="/"><li className='navbar-item'>Airport transfer</li> </Link>
           <Link to="/">  <li className='navbar-item'>Coupons & Deals</li> </Link>
           <Link to="/">   <li className='navbar-item'>Apartments</li> </Link>
 

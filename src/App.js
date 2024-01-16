@@ -10,6 +10,7 @@ import BookingFormPage from './components/BookingFormPage/BookingFormPage';
 
 const App = () => {
   const [showOnlyBooking, setShowOnlyBooking] = useState(false);
+  const [calculatedPrice, setCalculatedPrice] = useState(0); // Add state for price
 
   const handleBookNowClick = () => {
     setShowOnlyBooking(true);
@@ -22,17 +23,18 @@ const App = () => {
           <>
             <NavigationBar />
             <Routes>
-           
-            <Route path="/" element={<Home/>} exact />
-            <Route path="/Project" element={<Home/>} exact />
-              <Route path="/booking" element={<BookingFormPage />} />
+
+              <Route path="/" element={<Home setCalculatedPrice={setCalculatedPrice} />} exact />
+
+              <Route path="/Project" element={<Home />} exact />
+              <Route path="/booking" element={<BookingFormPage price={calculatedPrice} />} />
             </Routes>
           </>
         ) : (
           <>
             <NavigationBar />
-            <DataPicker  onBookNowClick={handleBookNowClick} />
-          
+            <DataPicker onBookNowClick={handleBookNowClick} setCalculatedPrice={setCalculatedPrice} />
+
             <ImageSlider />
             <Content />
           </>

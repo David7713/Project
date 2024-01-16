@@ -16,7 +16,8 @@ const CustomDatePickerInput = forwardRef(({ value, onClick }, ref) => (
   </div>
 ));
 
-const DataPicker = ({onBookNowClick}) => {
+const DataPicker = ({ onBookNowClick, setCalculatedPrice }) => {
+
   const currentDate = new Date();
 
   const [startDate, setStartDate] = useState(currentDate);
@@ -59,11 +60,17 @@ const DataPicker = ({onBookNowClick}) => {
     const numberOfDays = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1; // Include the first day in the calculation
     return baseRate * numberOfDays
   };
+
   const calculatePrice = () => {
     // Assuming the base rate is $20 per room per day
     const baseRate = 20;
-    const numberOfDays = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1; // Include the first day in the calculation
-    return baseRate * numberOfDays
+    const numberOfDays = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1;
+    const price = baseRate * numberOfDays;
+
+    // Update the calculated price using setCalculatedPrice
+    setCalculatedPrice(price);
+
+    return price;
   };
 
   useEffect(() => {
@@ -131,28 +138,28 @@ const DataPicker = ({onBookNowClick}) => {
       </div>
 
       <div className='header-part'>
-      <div className='header-section'>
-      <div className='header-section-left-part'>
-          <p>New Yerevan Hotel and Hostel </p>
-          <span>Parseghov St, Ajapnyak, Yerevan, Armenia, 560052</span>
-          <br></br>
-          <label>
-            <FaStar></FaStar>
-            <FaStar></FaStar>
-            <FaStar></FaStar>
-            <FaStar></FaStar>
-          </label>
-        </div>
-        <div className='header-section-right-part'>
-          <div className='discount-button'>67% OFF TODAY</div>
-          <p className='old-price'> ${defaultPrice()}</p>
-          <p className='new-price'>${calculatePrice()}</p>
-          <Link to="/booking">
-            <button className='book-button' onClick={onBookNowClick}>Book Now</button>
-          </Link>
+        <div className='header-section'>
+          <div className='header-section-left-part'>
+            <p>New Yerevan Hotel and Hostel </p>
+            <span>Parseghov St, Ajapnyak, Yerevan, Armenia, 560052</span>
+            <br></br>
+            <label>
+              <FaStar></FaStar>
+              <FaStar></FaStar>
+              <FaStar></FaStar>
+              <FaStar></FaStar>
+            </label>
+          </div>
+          <div className='header-section-right-part'>
+            <div className='discount-button'>67% OFF TODAY</div>
+            <p className='old-price'> ${defaultPrice()}</p>
+            <p className='new-price'>${calculatePrice()}</p>
+            <Link to="/booking">
+              <button className='book-button' onClick={onBookNowClick}>Book Now</button>
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

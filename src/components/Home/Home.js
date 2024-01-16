@@ -1,17 +1,18 @@
-import React from 'react'
- import Content from '../Content/Content'
- import NavigationBar from '../NavigationBar/NavigationBar'
- import ImageSlider from '../ImageSlider/ImageSlider'
- import DataPicker from '../DataPicker/DataPicker'
-const Home = () => {
+import React from 'react';
+import Content from '../Content/Content';
+import NavigationBar from '../NavigationBar/NavigationBar';
+import ImageSlider from '../ImageSlider/ImageSlider';
+import DataPicker from '../DataPicker/DataPicker';
+
+const Home = ({ setCalculatedPrice }) => {
   return (
     <div>
-        <NavigationBar></NavigationBar>
-        <DataPicker></DataPicker>
-        <ImageSlider></ImageSlider>
-        <Content></Content>
+      <NavigationBar />
+      <DataPicker setCalculatedPrice={setCalculatedPrice} />
+      <ImageSlider />
+      <Content />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
