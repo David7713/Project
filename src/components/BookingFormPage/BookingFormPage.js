@@ -7,7 +7,9 @@ import Modal from 'react-modal';
 
 import { IoShieldCheckmark } from 'react-icons/io5';
 
-import { CountryDropdown, RegionDropdown, CountryRegionData } from 'react-country-region-selector';
+import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
+
+
 import CreditCardInput from 'react-credit-card-input';
 import CreditCardValidator from 'card-validator';
 
@@ -47,6 +49,8 @@ const BookingFormPage = ({ price }) => {
   const [loadingDots, setLoadingDots] = useState('');
   const [selectedCountry, setSelectedCountry] = useState(''); // Add state for selected country
   const [countryError, setCountryError] = useState('');
+const [selectedRegion, setSelectedRegion] = useState('');
+const [regionError, setRegionError] = useState('');
   const [cardNumber, setCardNumber] = useState('');
   const [expiry, setExpiry] = useState('');
   const [cvc, setCVC] = useState('');
@@ -97,7 +101,14 @@ const BookingFormPage = ({ price }) => {
       setSubmitting(false);
       return;
     }
-
+  
+    // Check if the user has selected a region
+    if (!selectedRegion) {
+      setRegionError('Please select a region');
+      setSubmitting(false);
+      return;
+    }
+  
     // Validate credit card information
     const creditCardValidation = validateCreditCard();
     if (creditCardValidation !== true) {
@@ -106,40 +117,41 @@ const BookingFormPage = ({ price }) => {
       console.error(creditCardValidation);
       return;
     }
-
+  
     // Show loading animation
     setIsLoading(true);
-
+  
     // Display loading dots
     setLoadingDots('...');
-
+  
     // Simulate a 3-second delay (replace this with your actual form submission logic)
     await new Promise(resolve => setTimeout(resolve, 3000));
-
+  
     // Hide loading animation and reset loading dots
     setIsLoading(false);
     setLoadingDots('');
-
+  
     // Access credit card values
     const creditCardValues = {
       cardNumber,
       expiry,
       cvc,
     };
-
+  
     // Additional values for console.log
     const additionalValues = {
       ...values,
       ...creditCardValues,
       country: selectedCountry,
+      region: selectedRegion, // Include selected region in the console.log
       price: price,
       // Add other fields from Billing Address as needed
     };
-
+  
     console.log('Form submitted:', additionalValues);
-
+  
     openModal();
-
+  
     // Further logic or form submission if needed
     setSubmitting(false);
   };
@@ -225,47 +237,7 @@ const BookingFormPage = ({ price }) => {
             <Field className="form-input" type='text' name='phone' />
             <ErrorMessage name='phone' component='div' className='error' />
           </div>
-          <p className='billing-address-text'>Billing Address</p>
-          <div className='booking-form-div'>
-            <label className='input-label'>Select your country</label>
-            <CountryDropdown
-              classes='form-input'
-              value={selectedCountry}
-              onChange={(val) => {
-                setSelectedCountry(val);
-                setCountryError(''); // Clear country error when a country is selected
-              }}
-            />
-            {countryError && <div className='error'>{countryError}</div>}
-          </div>
-          <div className='booking-form-div'>
-
-            <label className='input-label' htmlFor='city'>City</label>
-            <Field className="form-input" type='text' name='city' />
-            <ErrorMessage name='city' component='div' className='error' />
-
-
-
-
-          </div>
-          <div className='booking-form-div'>
-            <label className='input-label' htmlFor='street'>Street Address</label>
-            <Field className="form-input" type='text' name='street' />
-            <ErrorMessage name='street' component='div' className='error' />
-
-
-
-
-          </div>
-          <div className='booking-form-div'>
-            <label className='input-label' htmlFor='zip'>Zip Code</label>
-            <Field className="form-input" type='text' name='zip' />
-            <ErrorMessage name='zip' component='div' className='error' />
-
-
-
-
-          </div>
+          
           <p className='secure-payment'>
 
             <IoShieldCheckmark className='secure-icon'></IoShieldCheckmark> <span className='secure-label'>Secure payment </span> All card information is fully encrypted, secure and protected.</p>
@@ -300,7 +272,62 @@ const BookingFormPage = ({ price }) => {
             <p className='error'>{cardValidationErrorMessage}</p>
           )}
           <br />
+          <p className='billing-address-text'>Billing Address</p>
+          <div className='booking-form-div'>
+            <label className='input-label'>Select your country</label>
+            <CountryDropdown
+              classes='form-input'
+              value={selectedCountry}
+              onChange={(val) => {
+                setSelectedCountry(val);
+                setCountryError(''); // Clear country error when a country is selected
+              }}
+            />
+            {countryError && <div className='error'>{countryError}</div>}
+          </div>
+          <div className='booking-form-div'>
+  <label className='input-label'>Select your region</label>
+  <RegionDropdown
+    classes='form-input'
+    country={selectedCountry}
+    value={selectedRegion}
+    onChange={(val) => {
+      setSelectedRegion(val);
+      setRegionError(''); // Clear region error when a region is selected
+    }}
+  />
+  {regionError && <div className='error'>{regionError}</div>}
+</div>
+          
+          
+          <div className='booking-form-div'>
 
+            <label className='input-label' htmlFor='city'>City</label>
+            <Field className="form-input" type='text' name='city' />
+            <ErrorMessage name='city' component='div' className='error' />
+
+
+
+
+          </div>
+          <div className='booking-form-div'>
+            <label className='input-label' htmlFor='street'>Street Address</label>
+            <Field className="form-input" type='text' name='street' />
+            <ErrorMessage name='street' component='div' className='error' />
+
+
+
+
+          </div>
+          <div className='booking-form-div'>
+            <label className='input-label' htmlFor='zip'>Zip Code</label>
+            <Field className="form-input" type='text' name='zip' />
+            <ErrorMessage name='zip' component='div' className='error' />
+
+
+
+
+          </div>
           <section className='total-price-section'>
             <p className='total-price'>Total Price: </p>
             <span>${price}</span>

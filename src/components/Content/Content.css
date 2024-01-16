@@ -62,6 +62,7 @@ body {
 .highlights-section ul {
     display: flex;
     flex-direction: row;
+
 }
 
 .highlights-icon {
@@ -73,7 +74,7 @@ body {
 .facilities-section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: flex-start; /* Use "flex-start" instead of "start" for clarity */
     border: 1px solid rgb(212, 209, 209);
     padding: 0.5rem;
@@ -183,6 +184,7 @@ body {
 .user-info-part ul{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .country-svg{
@@ -247,8 +249,8 @@ body {
     }
     .highlights-section ul {
         display: flex;
-        align-items: center;
-        justify-content: center;
+        justify-content: start;
+        align-items: start;
         flex-direction: column;
     }
     .facilities-section{
@@ -260,8 +262,8 @@ body {
     }
     .facilities-section ul{
         display: flex;
-        align-items: center;
-        justify-content: center;
+        align-items: start;
+        justify-content: start;
         flex-direction: column;
     }
     .rating-map-section{
@@ -278,7 +280,7 @@ body {
     }@media only screen and (max-width: 767px) {
         .first-review {
             flex-direction: column;
-            align-items: center;
+            align-items: start;
         }
     
         .review-text-part {

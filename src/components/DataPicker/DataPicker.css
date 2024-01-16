@@ -225,11 +225,13 @@
   .calendar-part,
   .adult-children-room-section {
     width: 100px;
-    margin-left: 50px;
+    margin-left: 3rem;
     background-color: white;
     border: none;
   }
-
+  .adult-children-room-section{
+    margin-left: 4rem;
+  }
   .icon {
     font-size: 10px;
   }
@@ -265,7 +267,7 @@
   }
 
   .date-picker-input {
-    max-width: 105px;
+    max-width: 115px;
     height: 20px;
     font-size: 10px;
     text-align: start;
