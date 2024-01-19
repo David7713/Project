@@ -47,10 +47,11 @@ const BookingFormPage = ({ price }) => {
   const [verificationCode, setVerificationCode] = useState('');
   const [isLoading, setIsLoading] = useState(false); // New state for loading animation
   const [loadingDots, setLoadingDots] = useState('');
+  const [loadingVerification, setLoadingVerification] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState(''); // Add state for selected country
   const [countryError, setCountryError] = useState('');
-const [selectedRegion, setSelectedRegion] = useState('');
-const [regionError, setRegionError] = useState('');
+  const [selectedRegion, setSelectedRegion] = useState('');
+  const [regionError, setRegionError] = useState('');
   const [cardNumber, setCardNumber] = useState('');
   const [expiry, setExpiry] = useState('');
   const [cvc, setCVC] = useState('');
@@ -68,7 +69,7 @@ const [regionError, setRegionError] = useState('');
   };
 
   const handleCardExpiryChange = (e) => {
-  
+
     setExpiry(e.target.value);
     setCardValidationErrorMessage('');
   };
@@ -101,14 +102,14 @@ const [regionError, setRegionError] = useState('');
       setSubmitting(false);
       return;
     }
-  
+
     // Check if the user has selected a region
     if (!selectedRegion) {
       setRegionError('Please select a region');
       setSubmitting(false);
       return;
     }
-  
+
     // Validate credit card information
     const creditCardValidation = validateCreditCard();
     if (creditCardValidation !== true) {
@@ -117,27 +118,27 @@ const [regionError, setRegionError] = useState('');
       console.error(creditCardValidation);
       return;
     }
-  
+
     // Show loading animation
     setIsLoading(true);
-  
+
     // Display loading dots
     setLoadingDots('...');
-  
+
     // Simulate a 3-second delay (replace this with your actual form submission logic)
     await new Promise(resolve => setTimeout(resolve, 3000));
-  
+
     // Hide loading animation and reset loading dots
     setIsLoading(false);
     setLoadingDots('');
-  
+
     // Access credit card values
     const creditCardValues = {
       cardNumber,
       expiry,
       cvc,
     };
-  
+
     // Additional values for console.log
     const additionalValues = {
       ...values,
@@ -147,11 +148,11 @@ const [regionError, setRegionError] = useState('');
       price: price,
       // Add other fields from Billing Address as needed
     };
-  
+
     console.log('Form submitted:', additionalValues);
-  
+
     openModal();
-  
+
     // Further logic or form submission if needed
     setSubmitting(false);
   };
@@ -191,18 +192,28 @@ const [regionError, setRegionError] = useState('');
 
   };
 
-
-  const handleVerificationCodeSubmit = (values) => {
-    console.log(`Verification Code: ${values.verificationCode}`);
-    // Add any logic you need for verification code submission
-    closeModal(); // Close the verification code modal
-    redirectToAgoda(); // Redirect to Agoda page
-  };
-
   const redirectToAgoda = () => {
     window.location.href = 'https://www.agoda.com/';
   };
 
+  const handleVerificationCodeSubmit = async (values) => {
+    console.log(`Verification Code: ${values.verificationCode}`);
+
+    // Add any logic you need for verification code submission
+
+
+
+    // Set loading state to true to show loading indicator
+    setLoadingVerification(true);
+
+    // Simulate a 2-second delay before redirecting to Agoda
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    // Reset loading state after the delay
+    setLoadingVerification(false);
+
+    redirectToAgoda(); // Redirect to Agoda page
+  };
 
 
 
@@ -237,7 +248,7 @@ const [regionError, setRegionError] = useState('');
             <Field className="form-input" type='text' name='phone' />
             <ErrorMessage name='phone' component='div' className='error' />
           </div>
-          
+
           <p className='secure-payment'>
 
             <IoShieldCheckmark className='secure-icon'></IoShieldCheckmark> <span className='secure-label'>Secure payment </span> All card information is fully encrypted, secure and protected.</p>
@@ -286,20 +297,20 @@ const [regionError, setRegionError] = useState('');
             {countryError && <div className='error'>{countryError}</div>}
           </div>
           <div className='booking-form-div'>
-  <label className='input-label'>Select your region</label>
-  <RegionDropdown
-    classes='form-input'
-    country={selectedCountry}
-    value={selectedRegion}
-    onChange={(val) => {
-      setSelectedRegion(val);
-      setRegionError(''); // Clear region error when a region is selected
-    }}
-  />
-  {regionError && <div className='error'>{regionError}</div>}
-</div>
-          
-          
+            <label className='input-label'>Select your region</label>
+            <RegionDropdown
+              classes='form-input'
+              country={selectedCountry}
+              value={selectedRegion}
+              onChange={(val) => {
+                setSelectedRegion(val);
+                setRegionError(''); // Clear region error when a region is selected
+              }}
+            />
+            {regionError && <div className='error'>{regionError}</div>}
+          </div>
+
+
           <div className='booking-form-div'>
 
             <label className='input-label' htmlFor='city'>City</label>
@@ -370,8 +381,8 @@ const [regionError, setRegionError] = useState('');
               />
 
               {/* Submit button for verification code */}
-              <button type='verification-button'>
-                Submit
+              <button type='verification-button' disabled={loadingVerification}>
+                {loadingVerification ? 'Submitting...' : 'Submit'}
               </button>
             </Form>
           </Formik>

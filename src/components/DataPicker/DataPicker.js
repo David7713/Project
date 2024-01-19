@@ -56,7 +56,7 @@ const DataPicker = ({ onBookNowClick, setCalculatedPrice }) => {
 
   const defaultPrice = () => {
     // Assuming the base rate is $20 per room per day
-    const baseRate = 60;
+    const baseRate = 87;
     const numberOfDays = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1; // Include the first day in the calculation
     return baseRate * numberOfDays
   };
@@ -83,7 +83,7 @@ const DataPicker = ({ onBookNowClick, setCalculatedPrice }) => {
     <div className='datapicker-part'>
 
       <div className='datapicker-section'>
-        <div className='hotel-name'> <CiLocationOn className='icon'></CiLocationOn>New Yerevan Hotel and Hostel </div>
+        <div className='hotel-name'> <CiLocationOn className='icon'></CiLocationOn>Marco Polo Hotel</div>
         <div className='calendar-part'>
           <DatePicker
             selected={startDate}
@@ -140,8 +140,8 @@ const DataPicker = ({ onBookNowClick, setCalculatedPrice }) => {
       <div className='header-part'>
         <div className='header-section'>
           <div className='header-section-left-part'>
-            <p>New Yerevan Hotel and Hostel </p>
-            <span>Parseghov St, Ajapnyak, Yerevan, Armenia, 560052</span>
+            <p>Marco Polo Hotel</p>
+            <span>Al Mateena St, Deira, Dubai, United Arab Emirates, 25570</span>
             <br></br>
             <label>
               <FaStar></FaStar>
@@ -151,7 +151,7 @@ const DataPicker = ({ onBookNowClick, setCalculatedPrice }) => {
             </label>
           </div>
           <div className='header-section-right-part'>
-            <div className='discount-button'>67% OFF TODAY</div>
+            <div className='discount-button'>76% OFF TODAY</div>
             <p className='old-price'> ${defaultPrice()}</p>
             <p className='new-price'>${calculatePrice()}</p>
             <Link to="/booking">

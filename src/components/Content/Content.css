@@ -3,6 +3,7 @@ body {
     overflow-x: hidden;
 
 }
+
 .content-section {
     display: flex;
     flex-direction: row;
@@ -17,7 +18,8 @@ body {
 .hotel-info-section {
     display: flex;
     flex-direction: column;
-    align-items: start; /* Use "flex-start" instead of "start" for clarity */
+    align-items: start;
+    /* Use "flex-start" instead of "start" for clarity */
     border: 1px solid rgb(212, 209, 209);
     padding: 1rem;
     border-radius: 3px;
@@ -33,7 +35,7 @@ body {
 }
 
 .star-icons {
-    color:gold;
+    color: gold;
 }
 
 .hotel-info-section p {
@@ -46,7 +48,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start; /* Use "flex-start" instead of "start" for clarity */
+    align-items: flex-start;
+    /* Use "flex-start" instead of "start" for clarity */
     border: 1px solid rgb(212, 209, 209);
     border-radius: 3px;
     margin-top: 1rem;
@@ -63,6 +66,14 @@ body {
     display: flex;
     flex-direction: row;
 
+
+}
+
+.highlights-section ul svg {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .highlights-icon {
@@ -75,12 +86,18 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    align-items: flex-start; /* Use "flex-start" instead of "start" for clarity */
+    align-items: flex-start;
+    /* Use "flex-start" instead of "start" for clarity */
     border: 1px solid rgb(212, 209, 209);
     padding: 0.5rem;
     border-radius: 3px;
     margin-top: 1rem;
     width: 100%;
+}
+
+.facilities-section ul li {
+    display: flex;
+    flex-direction: row;
 }
 
 .facilities-section span {
@@ -91,6 +108,7 @@ body {
 
 .check-icon {
     color: green;
+    font-size: 20px
 }
 
 /* Rating section */
@@ -101,7 +119,8 @@ body {
     justify-content: center;
     padding: 1rem;
     margin-left: 1rem;
-    align-items: flex-start; /* Use "flex-start" instead of "start" for clarity */
+    align-items: flex-start;
+    /* Use "flex-start" instead of "start" for clarity */
     border: 1px solid rgb(212, 209, 209);
     width: max-content;
 }
@@ -133,7 +152,8 @@ body {
     width: 250px;
     height: 170px;
 }
-.review-section{
+
+.review-section {
     margin-top: 1rem;
     display: flex;
     flex-direction: row;
@@ -142,7 +162,8 @@ body {
     font-size: 13px;
 
 }
-.first-review{
+
+.first-review {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -151,52 +172,58 @@ body {
     border-top: 1px solid rgb(214, 213, 213);
 
 
-    
+
 }
-.review-text-part{
+
+.review-text-part {
     background-color: #f5f5f5;
     border-radius: 6px;
     width: 60%;
     padding: 1rem;
     font-size: 15px;
-   
-    
-}
-.review-text-part label{
-   font-size: 25px;
-}
-.review-text-part p{
-    margin-top: 1rem;
-    color: #2a2a2e;
-  
+
+
 }
 
-.review-text-part span{
+.review-text-part label {
+    font-size: 25px;
+}
+
+.review-text-part p {
+    margin-top: 1rem;
+    color: #2a2a2e;
+
+}
+
+.review-text-part span {
     font-size: 12px;
 
 }
-.user-info-part{
+
+.user-info-part {
     display: flex;
     flex-direction: column;
-    color:#4e4e4e;
+    color: #4e4e4e;
 
 }
-.user-info-part ul{
+
+.user-info-part ul {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
 }
 
-.country-svg{
+.country-svg {
     margin-right: 1rem;
 }
-.user-info-part label{
-    color:#5392f9;
+
+.user-info-part label {
+    color: #5392f9;
     font-size: 30px;
-   text-align: center;
+    text-align: center;
 }
 
-.footer-section{
+.footer-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -204,7 +231,8 @@ body {
     color: rgb(215, 215, 219);
     margin-top: 1rem;
 }
-.footer-text-section{
+
+.footer-text-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -212,115 +240,138 @@ body {
     margin-top: 1rem;
     padding: 0.3rem;
 }
-.partner-logos-section{
+
+.partner-logos-section {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-   height: 100px;
-   padding: 1rem;
-   margin-top: 1rem;
+    height: 100px;
+    padding: 1rem;
+    margin-top: 1rem;
 }
-.partner-logos-section img{
+
+.partner-logos-section img {
     width: 100px;
     height: 50px;
 }
 
 /* Media Queries =========> */
 @media only screen and (max-width: 767px) {
-    .content-section{
+    .content-section {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         width: 100%;
-        margin-left:0
+        margin-left: 0
     }
-  
 
-    .hotel-info-section{
+
+    .hotel-info-section {
         display: flex;
-      
+
     }
-    .highlights-section{
+
+    .highlights-section {
         display: flex;
         width: 100%;
         flex-direction: column;
         justify-content: start;
         align-items: start;
     }
+
     .highlights-section ul {
         display: flex;
         justify-content: start;
         align-items: start;
         flex-direction: column;
     }
-    .facilities-section{
+
+    .highlights-section ul li {
+        display: flex;
+        flex-direction: row;
+
+
+    }
+
+    .highlights-section ul li p {
+        margin-left: 0.5rem;
+    }
+
+    .facilities-section {
         display: flex;
         width: 100%;
         flex-direction: column;
         justify-content: start;
         align-items: start;
     }
-    .facilities-section ul{
+
+    .facilities-section ul {
         display: flex;
         align-items: start;
         justify-content: start;
         flex-direction: column;
     }
-    .rating-map-section{
+
+    .rating-map-section {
         margin-top: 1rem;
         width: 100%;
-     
+
     }
-    
-    .rating-section{
+
+    .rating-section {
         width: max-content;
-       
-        
+
+
     }
-    }@media only screen and (max-width: 767px) {
-        .first-review {
-            flex-direction: column;
-            align-items: start;
-        }
-    
-        .review-text-part {
-            width: 100%;
-        }
-    
-        .user-info-part {
-            margin-top: 1rem;
-            align-items: center;
-        }
-    
-        .country-svg {
-            margin-right: 0.5rem;
-        }
+}
+
+@media only screen and (max-width: 767px) {
+    .first-review {
+        flex-direction: column;
+        align-items: start;
     }
-    
-    @media only screen and (min-width: 768px) and (max-width: 1023px) {
-        .review-section {
-            font-size: 15px;
-        }
+
+    .review-text-part {
+        width: 100%;
     }
-    @media only screen and (max-width: 767px) {
-        .footer-section {
-            margin-top: 2rem;
-            text-align: center;
-        }
-    
-        .footer-text-section {
-            padding: 1rem;
-        }
-    
-        .partner-logos-section {
-            flex-direction: column;
-            align-items: center;
-            height: auto;
-        }
-    
-        .partner-logos-section img {
-            width: 80px; /* Adjust the width as needed */
-            height: auto; /* Maintain aspect ratio */
-            margin-bottom: 1rem;
-        }
+
+    .user-info-part {
+        margin-top: 1rem;
+        align-items: center;
     }
+
+    .country-svg {
+        margin-right: 0.5rem;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .review-section {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .footer-section {
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .footer-text-section {
+        padding: 1rem;
+    }
+
+    .partner-logos-section {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .partner-logos-section img {
+        width: 80px;
+        /* Adjust the width as needed */
+        height: auto;
+        /* Maintain aspect ratio */
+        margin-bottom: 1rem;
+    }
+}
