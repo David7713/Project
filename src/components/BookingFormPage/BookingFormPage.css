@@ -180,16 +180,34 @@
 }
 
 
-.credit-card-input-div {
-  display: flex;
-  border: 1px solid rgb(212, 209, 209);
-  width: 600px;
-  margin-top: 2rem;
-
-}
 
 .iajwfr.is-invalid {
   border: 1px solid rgb(212, 209, 209) !important;
+}
+.expiration-cvc-section {
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.expiration-section,
+.cvc-section {
+  width: 50%;
+  margin-right: 15px; /* Increase the margin for a bit more gap */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+
+}
+
+.expiration-input,
+.cvc-input {
+  height: 30px;
+  width: 100%;
+  border: 1px solid rgb(212, 209, 209);
+  transition: border-color 0.3s;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+
 }
 
 /* Tablet Styles */
@@ -197,6 +215,9 @@
   .form-input {
     width: 80%;
     /* Adjust the width for tablet screens */
+  }
+  .expiration-cvc-section{
+    width: 80%;
   }
 
   .card-section {
@@ -211,9 +232,7 @@
 
   }
 
-  .credit-card-input-div {
-    width: 80%;
-  }
+
 
   .total-price-section {
     width: 80%;
@@ -233,10 +252,7 @@
     /* Adjust padding for smaller screens */
   }
 
-  .credit-card-input-div {
-    width: 90%;
-    font-size: 14px;
-  }
+
 
   .secure-payment {
     flex-direction: column;
@@ -263,6 +279,85 @@
 
 /* Media query for tablets and smaller screens (portrait) */
 @media only screen and (max-width: 768px) {
+  .verification-section {
+    padding: 15px;
+    margin-top: 1rem;
+  }
+
+  .verification-section label {
+    font-size: 20px;
+  }
+
+  .verification-section input {
+    width: 100%;
+    /* Adjust as needed */
+  }
+
+  .verification-section button {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+}
+/* Add this CSS to your BookingFormPage.css file or your preferred stylesheet */
+
+/* Existing styles... */
+
+/* Microsoft Surface Duo (540x720) and similar small screens */
+@media only screen and (max-width: 540px) {
+  .form-input {
+    width: 80vw;
+    /* Adjust the width for small screens */
+  }
+
+  .booking-form {
+    padding: 10px;
+    /* Adjust padding for smaller screens */
+  }
+
+
+
+  .secure-payment {
+    flex-direction: column;
+    /* Stack secure payment elements on smaller screens */
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+
+  .secure-icon,
+  .secure-label {
+    margin-right: 0;
+    /* Remove margin for smaller screens */
+    margin-bottom: 0.3rem;
+    /* Add space between secure icon and label */
+  }
+
+  .expiration-cvc-section,
+  .card-section,
+  .total-price-section {
+    width: 75vw;
+    /* Adjust the width for small screens */
+  }
+
+  .card-section,
+  .total-price-section {
+    font-size: 14px;
+    /* Adjust font size for smaller screens */
+  }
+
+  .card-section p {
+    font-size: 10px;
+    /* Adjust font size for smaller screens */
+  }
+
+  .billing-address-text {
+    font-size: 16px;
+    /* Adjust font size for smaller screens */
+  }
+
+  .booking-form-div {
+    margin-top: 0.3rem;
+  }
+
   .verification-section {
     padding: 15px;
     margin-top: 1rem;
