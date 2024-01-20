@@ -184,20 +184,28 @@
 .iajwfr.is-invalid {
   border: 1px solid rgb(212, 209, 209) !important;
 }
+
 .expiration-cvc-section {
   width: 600px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   margin-top: 0.5rem;
 }
 
 .expiration-section,
 .cvc-section {
   width: 50%;
-  margin-right: 15px; /* Increase the margin for a bit more gap */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 
+  box-sizing: border-box;
+  /* Include padding and border in the element's total width and height */
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+.cvc-section {
+  margin-left: 1rem;
 }
 
 .expiration-input,
@@ -206,7 +214,8 @@
   width: 100%;
   border: 1px solid rgb(212, 209, 209);
   transition: border-color 0.3s;
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  box-sizing: border-box;
+  /* Include padding and border in the element's total width and height */
 
 }
 
@@ -216,7 +225,8 @@
     width: 80%;
     /* Adjust the width for tablet screens */
   }
-  .expiration-cvc-section{
+
+  .expiration-cvc-section {
     width: 80%;
   }
 
@@ -298,6 +308,7 @@
     margin-top: 1rem;
   }
 }
+
 /* Add this CSS to your BookingFormPage.css file or your preferred stylesheet */
 
 /* Existing styles... */
@@ -334,8 +345,12 @@
   .expiration-cvc-section,
   .card-section,
   .total-price-section {
-    width: 75vw;
+    width: 80vw;
     /* Adjust the width for small screens */
+  }
+
+  .cvc-section {
+    margin-left: 1rem;
   }
 
   .card-section,

@@ -32,7 +32,7 @@
 }
 
 .date-picker-input {
- 
+
   border: none;
   padding: 5px;
   margin-left: 1rem;
@@ -41,7 +41,10 @@
   height: 50px;
   font-size: 16px;
 }
-.react-datepicker__current-month, .react-datepicker-time__header, .react-datepicker-year-header {
+
+.react-datepicker__current-month,
+.react-datepicker-time__header,
+.react-datepicker-year-header {
   margin-top: 0;
   font-weight: bold;
   font-size: 0.944rem;
@@ -94,6 +97,7 @@
 .counter span {
   margin-left: 10px;
 }
+
 /* Default styles */
 .header-part {
   display: flex;
@@ -229,9 +233,11 @@
     background-color: white;
     border: none;
   }
-  .adult-children-room-section{
+
+  .adult-children-room-section {
     margin-left: 4rem;
   }
+
   .icon {
     font-size: 10px;
   }
