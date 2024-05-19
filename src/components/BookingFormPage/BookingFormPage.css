@@ -7,11 +7,9 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  /* Add padding for better visual appeal */
   border-radius: 8px;
-  /* Add border radius for rounded corners */
   position: relative;
-  /* Required for the absolute positioning of the shadow */
+
 }
 
 .booking-form::before {
@@ -23,9 +21,7 @@
   bottom: 0;
   border-radius: inherit;
   box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
-  /* Soft inner shadow effect */
   pointer-events: none;
-  /* Ensure the shadow does not interfere with form interactions */
 }
 
 .intro-text {
@@ -72,7 +68,6 @@
   height: 30px;
   border: 1px solid rgb(212, 209, 209);
   transition: border-color 0.3s;
-  /* Add a smooth transition effect */
 }
 
 .form-input:focus {
@@ -130,7 +125,6 @@
   text-align: center;
   padding: 20px;
   background-color: #fff;
-  /* Set your desired background color */
   border-radius: 8px;
   margin-top: 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -151,7 +145,6 @@
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
-  /* Set your desired border color */
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -162,7 +155,6 @@
 
 .verification-section button {
   background-color: #4caf50;
-  /* Set your desired button color */
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -176,7 +168,6 @@
 
 .verification-section button:hover {
   background-color: #45a049;
-  /* Set your desired hover color */
 }
 
 
@@ -197,7 +188,6 @@
   width: 50%;
 
   box-sizing: border-box;
-  /* Include padding and border in the element's total width and height */
   display: flex;
   flex-direction: column;
 
@@ -215,15 +205,16 @@
   border: 1px solid rgb(212, 209, 209);
   transition: border-color 0.3s;
   box-sizing: border-box;
-  /* Include padding and border in the element's total width and height */
 
 }
 
+
+/* Media Queries ============> */
 /* Tablet Styles */
 @media (max-width: 767px) {
   .form-input {
     width: 80%;
-    /* Adjust the width for tablet screens */
+
   }
 
   .expiration-cvc-section {
@@ -253,20 +244,17 @@
 @media (max-width: 480px) {
   .form-input {
     width: 40vh;
-    /* Adjust the width for mobile screens */
   }
 
 
   .booking-form {
     padding: 10px;
-    /* Adjust padding for smaller screens */
   }
 
 
 
   .secure-payment {
     flex-direction: column;
-    /* Stack secure payment elements on smaller screens */
     align-items: center;
     margin-top: 0.5rem;
   }
@@ -274,16 +262,13 @@
   .secure-icon,
   .secure-label {
     margin-right: 0;
-    /* Remove margin for smaller screens */
     margin-bottom: 0.3rem;
-    /* Add space between secure icon and label */
   }
 }
 
 @media only screen and (max-width: 1024px) {
   .verification-section input {
     width: 100%;
-    /* Adjust as needed */
   }
 }
 
@@ -309,44 +294,41 @@
   }
 }
 
-/* Add this CSS to your BookingFormPage.css file or your preferred stylesheet */
 
-/* Existing styles... */
 
-/* Microsoft Surface Duo (540x720) and similar small screens */
+
+
 @media only screen and (max-width: 540px) {
   .form-input {
     width: 80vw;
-    /* Adjust the width for small screens */
+ 
   }
 
   .booking-form {
     padding: 10px;
-    /* Adjust padding for smaller screens */
+  
   }
 
 
 
   .secure-payment {
     flex-direction: column;
-    /* Stack secure payment elements on smaller screens */
-    align-items: center;
+   align-items: center;
     margin-top: 0.5rem;
   }
 
   .secure-icon,
   .secure-label {
     margin-right: 0;
-    /* Remove margin for smaller screens */
     margin-bottom: 0.3rem;
-    /* Add space between secure icon and label */
+ 
   }
 
   .expiration-cvc-section,
   .card-section,
   .total-price-section {
     width: 80vw;
-    /* Adjust the width for small screens */
+
   }
 
   .cvc-section {
@@ -356,17 +338,16 @@
   .card-section,
   .total-price-section {
     font-size: 14px;
-    /* Adjust font size for smaller screens */
   }
 
   .card-section p {
     font-size: 10px;
-    /* Adjust font size for smaller screens */
+
   }
 
   .billing-address-text {
     font-size: 16px;
-    /* Adjust font size for smaller screens */
+
   }
 
   .booking-form-div {
@@ -384,7 +365,7 @@
 
   .verification-section input {
     width: 100%;
-    /* Adjust as needed */
+
   }
 
   .verification-section button {

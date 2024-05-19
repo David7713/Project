@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './BookingFormPage.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import * as cardValidator from 'card-validator'; // Import card-validator library
+import * as cardValidator from 'card-validator'; 
 
 import Modal from 'react-modal';
 
@@ -20,12 +20,11 @@ const validateCardNumber = (value) => {
 const validateCVC = (value, cardNumber) => {
   const isAmex = cardValidator.number(cardNumber).card?.type === 'american-express';
 
-  // Check if the card type is Amex, and ensure the CVV is 4 digits
+ 
   if (isAmex) {
     return value.length === 4;
   }
 
-  // For other card types, use the library's validation
   const cvcValidation = cardValidator.cvv(value);
   return cvcValidation.isValid;
 };
@@ -54,7 +53,6 @@ const validationSchema = Yup.object().shape({
   expirationDate: Yup.string()
     .required('Expiration Date is required')
     .test('expirationDate', 'Invalid Expiration Date', validateExpirationDate),
-  // ... Other fields
 
 });
 
@@ -72,16 +70,16 @@ const BookingFormPage = ({ price }) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [verificationCode, setVerificationCode] = useState('');
-  const [isLoading, setIsLoading] = useState(false); // New state for loading animation
+  const [isLoading, setIsLoading] = useState(false); 
   const [loadingDots, setLoadingDots] = useState('');
   const [loadingVerification, setLoadingVerification] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState(''); // Add state for selected country
+  const [selectedCountry, setSelectedCountry] = useState(''); 
   const [countryError, setCountryError] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('');
   const [regionError, setRegionError] = useState('');
   const currentDate = new Date();
   const [startDate, setStartDate] = useState(currentDate);
-  const [endDate, setEndDate] = useState(new Date(currentDate.getTime() + 24 * 60 * 60 * 1000)); // Set default endDate to one day after startDate
+  const [endDate, setEndDate] = useState(new Date(currentDate.getTime() + 24 * 60 * 60 * 1000)); 
 
 
 
@@ -102,76 +100,49 @@ const BookingFormPage = ({ price }) => {
 
 
   const handleSubmit = async (values, { setSubmitting }) => {
-    // Check if the user has selected a country
+
     if (!selectedCountry) {
       setCountryError('Please select a country');
       setSubmitting(false);
       return;
     }
-  
-    // Check if the user has selected a region
+
+
     if (!selectedRegion) {
       setRegionError('Please select a region');
       setSubmitting(false);
       return;
     }
-  
-    // Show loading animation
+
+
+
+
     setIsLoading(true);
-  
-    // Display loading dots
     setLoadingDots('...');
-  
-    // Simulate a 3-second delay for loading animation (no impact on data submission or console.log)
+
+ 
     await new Promise(resolve => setTimeout(resolve, 3000));
-  
-    // Reset loading state after the simulation
+
+ 
     setIsLoading(false);
     setLoadingDots('');
-    
-    const url = window.location.href
-    try {
-      // Make a POST request to your desired URL
-      const response = await fetch(`${url/"personal-info"}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...values,
-          country: selectedCountry,
-          region: selectedRegion,
-          price: price,
-          // Add other fields from Billing Address as needed
-        }),
-      });
-  
-      if (!response.ok) {
-        throw new Error('Failed to submit form');
-      }
-  
-      // Access credit card values
-      const additionalValues = {
-        ...values,
-        country: selectedCountry,
-        region: selectedRegion,
-        price: price,
-        // Add other fields from Billing Address as needed
-      };
-  
-      console.log('Form submitted:', additionalValues);
-  
-      openModal();
-  
-      // Further logic or form submission if needed
-      setSubmitting(false);
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      // Handle error as needed, e.g., show an error message
-      setSubmitting(false);
-    }
+
+ 
+
+
+
+    const additionalValues = {
+      ...values,
+      country: selectedCountry,
+      region: selectedRegion,
+      price: price,
+    };
+
+    console.log('Form submitted:', additionalValues);
+
+    openModal();
+    setSubmitting(false);
   };
-  
 
 
 
@@ -190,59 +161,25 @@ const BookingFormPage = ({ price }) => {
     window.location.href = 'https://www.agoda.com/';
   };
 
-
-  
   const handleVerificationCodeSubmit = async (values) => {
     console.log(`Verification Code: ${values.verificationCode}`);
-  
-    // Add any logic you need for verification code submission
-  
-    // Set loading state to true to show loading indicator
-    setLoadingVerification(true);
-  
-    // Display loading dots
-    setLoadingDots('...');
-  
-    // Simulate a 2-second delay before making a POST request (replace with actual logic)
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    const url = window.location.href
-    try {
-      // Make a POST request to your desired URL
-      const response = await fetch(`${url}/personal-code/`, {
 
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          verificationCode: values.verificationCode,
-          // Add any other data needed for verification code submission
-        }),
-      });
-  
-      if (!response.ok) {
-        throw new Error('Failed to submit verification code');
-      }
-  
-      // Handle the response as needed
-      const responseData = await response.json();
-      console.log('Verification Code Response:', responseData);
-  
-      // Add your logic for verification code submission here if needed
-  
-      // Reset loading state after the POST request
-      setLoadingVerification(false);
-      setLoadingDots('');
-  
-      // Redirect to Agoda page
-      redirectToAgoda();
-    } catch (error) {
-      console.error('Error submitting verification code:', error);
-      // Handle error as needed, e.g., show an error message
-      setLoadingVerification(false);
-      setLoadingDots('');
-    }
+
+
+
+
+ 
+    setLoadingVerification(true);
+
+
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    // Reset loading state after the delay
+    setLoadingVerification(false);
+
+    redirectToAgoda(); // Redirect to Agoda page
   };
+
 
 
   return (
@@ -419,7 +356,6 @@ const BookingFormPage = ({ price }) => {
       </Formik>
 
 
-      {/* Modal for verification code */}
       <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
@@ -428,7 +364,6 @@ const BookingFormPage = ({ price }) => {
         <div className='verification-section'>
           <label>Verification Code</label>
           <p>Enter the verification code received:</p>
-          {/* Input field for verification code */}
           <Formik
             initialValues={{ verificationCode: '' }}
             validationSchema={verificationCodeValidationSchema}
@@ -441,14 +376,14 @@ const BookingFormPage = ({ price }) => {
                 className='form-input'
                 placeholder='Enter verification code'
               />
-              {/* Error message for verification code */}
+
               <ErrorMessage
                 name='verificationCode'
                 component='div'
                 className='error'
               />
 
-              {/* Submit button for verification code */}
+       
               <button type='verification-button' disabled={loadingVerification}>
                 {loadingVerification ? 'Submitting...' : 'Submit'}
               </button>

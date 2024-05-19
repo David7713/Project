@@ -1,4 +1,4 @@
-/* General styling */
+
 body {
     overflow-x: hidden;
 
@@ -14,12 +14,11 @@ body {
     width: 80%;
 }
 
-/* Hotel info section */
+
 .hotel-info-section {
     display: flex;
     flex-direction: column;
     align-items: start;
-    /* Use "flex-start" instead of "start" for clarity */
     border: 1px solid rgb(212, 209, 209);
     padding: 1rem;
     border-radius: 3px;
@@ -49,7 +48,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    /* Use "flex-start" instead of "start" for clarity */
     border: 1px solid rgb(212, 209, 209);
     border-radius: 3px;
     margin-top: 1rem;
@@ -87,7 +85,6 @@ body {
     flex-direction: column;
     justify-content: start;
     align-items: flex-start;
-    /* Use "flex-start" instead of "start" for clarity */
     border: 1px solid rgb(212, 209, 209);
     padding: 0.5rem;
     border-radius: 3px;
@@ -120,7 +117,6 @@ body {
     padding: 1rem;
     margin-left: 1rem;
     align-items: flex-start;
-    /* Use "flex-start" instead of "start" for clarity */
     border: 1px solid rgb(212, 209, 209);
     width: max-content;
 }
@@ -369,9 +365,7 @@ body {
 
     .partner-logos-section img {
         width: 80px;
-        /* Adjust the width as needed */
         height: auto;
-        /* Maintain aspect ratio */
         margin-bottom: 1rem;
     }
 }

@@ -8,7 +8,7 @@ body {
   font-family: 'Helvetica Neue', sans-serif;
 }
 
-/* Apply Poppins font to .react-datapicker, with !important */
+
 body .react-datapicker {
   font-family: 'Poppins', sans-serif;
 }
