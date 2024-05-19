@@ -1,5 +1,5 @@
 
-# Fast and efficient currency exchange platform.
+# Explore the world with our seamless travel app.
 
 Introducing our Booking App – your ultimate solution for hassle-free reservations and seamless planning. Our user-friendly web application offers an intuitive interface designed to provide you with instant access to booking services and smooth transactions.
 
